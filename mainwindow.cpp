@@ -26,6 +26,14 @@ MainWindow::MainWindow(QWidget *parent) :
     std::cout << n << std::endl;
     std::cout << m*n << std::endl;
 
+    MatrixXd nm(5,3);
+    nm << 6, 5, 7,
+         5, 6, 5,
+            1, 3, 7,
+            4, 6, 7,
+            2, 0, 7;
+    std::cout << nm << std::endl;
+    std::cout << -nm.transpose() << std::endl;
 
 }
 
