@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <iostream>
-#include <Eigen/Dense>
+#include <minmaxlib.h>
 
 using Eigen::MatrixXd;
 
@@ -11,29 +11,18 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    MatrixXd m(2,2);
-    m(0,0) = 1;
-    m(1,0) = 3;
-    m(0,1) = 2;
-    m(1,1) = 4;
-   // m = {(1,2),(3,4)};
-    MatrixXd n(2,1);
-    n(0,0) = 0;
-    n(1,0) = 1;
-    std::cout << m << std::endl;
-    std::cout << m.inverse() << std::endl;
-    std::cout << -m.transpose() << std::endl;
-    std::cout << n << std::endl;
-    std::cout << m*n << std::endl;
+    MatrixXd A(4,4);
+    A << -16, 1.17549e-038, 1.17549e-038, 1.17549e-038,
+         -26, -30, -26, -29,
+         -32, -36, -32, -35,
+         -33, -37, -33, -36;
+    MatrixXd c(4,1);
+    c(0,0) = 50;
+    c(1,0) = 50;
+    c(2,0) = 50;
+    c(3,0) = 50;
+    std::cout << minmul(A,c);
 
-    MatrixXd nm(5,3);
-    nm << 6, 5, 7,
-         5, 6, 5,
-            1, 3, 7,
-            4, 6, 7,
-            2, 0, 7;
-    std::cout << nm << std::endl;
-    std::cout << -nm.transpose() << std::endl;
 
 }
 
