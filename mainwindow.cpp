@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     MatrixXd A(4,4);
-    A << -16, 1.17549e-038, 1.17549e-038, 1.17549e-038,
+    A << -16, meps, meps, meps,
          -26, -30, -26, -29,
          -32, -36, -32, -35,
          -33, -37, -33, -36;
