@@ -1,14 +1,16 @@
 #ifndef MINMAXLIB_H
 #define MINMAXLIB_H
 
+#include <limits>
 #include <Eigen/Dense>
 using Eigen::MatrixXd;
 
-//Hodnoty minus nekonecno a plus nekonecno su predstavovane hodnotami meps a eps
-#define meps 1.17549e-038
-#define eps 1.17549e+038
+//Definovane hodnoty: eps = -nekonecno; meps = nekonecno;
+#define eps -std::numeric_limits<double>::infinity()
+#define meps std::numeric_limits<double>::infinity()
 
 
 MatrixXd minmul(MatrixXd A, MatrixXd B);
+MatrixXd maxmul(MatrixXd A, MatrixXd B);
 
 #endif // MINMAXLIB_H

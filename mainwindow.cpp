@@ -11,19 +11,20 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    MatrixXd A(4,4);
-    A << -16, meps, meps, meps,
-         -26, -30, -26, -29,
-         -32, -36, -32, -35,
-         -33, -37, -33, -36;
+    MatrixXd A(2,2);
+    A << 2, meps,
+         meps, 3;
+
+    MatrixXd B(2,2);
+    B = A;
+
     MatrixXd c(4,1);
     c(0,0) = 50;
     c(1,0) = 50;
     c(2,0) = 50;
     c(3,0) = 50;
-    std::cout << minmul(A,c);
 
-
+    std::cout << minmul(A,B) << std::endl;
 }
 
 MainWindow::~MainWindow()
