@@ -21,7 +21,7 @@ MatrixXd minmul(MatrixXd A, MatrixXd B){
                 } else if ( fabsf(valB-meps) <= std::numeric_limits<float>::lowest() * fmaxf(fabsf(valB), fabsf(meps))){
                     a_mulVal[numMul] = meps;
                 } else */
-                    a_mulVal[numMul] = valA + valB;
+                a_mulVal[numMul] = valA + valB;
             }
             //najdenie minima zo suctov
             extremeVal = a_mulVal[0];
