@@ -7,10 +7,11 @@ using Eigen::MatrixXd;
 
 void skusobnaUloha(){
     MatrixXd A(4,4);
-    A <<   4,   5,   2, eps,
-         eps,   5, eps,  10,
-         eps,   3,   7,   6,
-         eps, eps,   8,   9;
+    A <<   3,   4, eps,   8,
+           2,   5,   2, eps,
+           4,   6,   3,   4,
+         eps,   3,   0,   6;
+
     MatrixXd Apwr(4,4);
     Apwr = maxmul(maxmul(A,A),maxmul(A,A));
 
@@ -18,12 +19,13 @@ void skusobnaUloha(){
     Akon = -Apwr.transpose();
 
     MatrixXd c(4,1);
-    c(0,0) = 50;
-    c(1,0) = 50;
-    c(2,0) = 50;
-    c(3,0) = 50;
+    c(0,0) = 30;
+    c(1,0) = 30;
+    c(2,0) = 30;
+    c(3,0) = 30;
 
-    std::cout << minmul(Akon,c) << std::endl;
+    std::cout << minmul(Akon,c) << std::endl << std::endl;
+    std::cout << maxmul(Apwr,minmul(Akon,c)) << std::endl;
 }
 
 MainWindow::MainWindow(QWidget *parent) :
