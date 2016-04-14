@@ -1,6 +1,6 @@
 #include <minmaxlib.h>
 #include <iostream>
-#include <math.h>     /* abs */
+#include <math.h>     /* abs *///pripadne nepotrebny include
 
 //Funkcia vypocita sucin matic lubovolnych rozmerov v minplus algebre
 MatrixXd minmul(MatrixXd A, MatrixXd B){

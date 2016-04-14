@@ -10,10 +10,36 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QMdiArea" name="mdiArea">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>180</y>
+      <width>200</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="subwindow">
+     <property name="windowTitle">
+      <string>Subwindow</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="subwindow_2">
+     <property name="windowTitle">
+      <string>Subwindow</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
